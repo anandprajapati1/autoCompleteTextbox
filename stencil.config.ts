@@ -1,7 +1,7 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'autocompletetextbox1',
+  namespace: 'autocompletetextbox',
   outputTargets: [
     {
       type: 'dist',

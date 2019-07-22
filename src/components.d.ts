@@ -9,53 +9,40 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface MyComponent {
+  interface AutoCompleteTextbox {
+    'data': string[];
+    'initializeData': (d: string[]) => Promise<void>;
     /**
-    * The first name
+    * This property can be used by host element to make functionality disabled
     */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
+    'isDisabled': boolean;
   }
 }
 
 declare global {
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLAutoCompleteTextboxElement extends Components.AutoCompleteTextbox, HTMLStencilElement {}
+  var HTMLAutoCompleteTextboxElement: {
+    prototype: HTMLAutoCompleteTextboxElement;
+    new (): HTMLAutoCompleteTextboxElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'auto-complete-textbox': HTMLAutoCompleteTextboxElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
+  interface AutoCompleteTextbox extends JSXBase.HTMLAttributes<HTMLAutoCompleteTextboxElement> {
+    'data'?: string[];
     /**
-    * The first name
+    * This property can be used by host element to make functionality disabled
     */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
+    'isDisabled'?: boolean;
   }
 
   interface IntrinsicElements {
-    'my-component': MyComponent;
+    'auto-complete-textbox': AutoCompleteTextbox;
   }
 }
 

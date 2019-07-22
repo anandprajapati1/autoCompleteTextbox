@@ -1,5 +1,5 @@
 {
-  "name": "autocompletetextbox1",
+  "name": "autocompletetextbox",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/autocompletetextbox1/autocompletetextbox1.js",
+  "unpkg": "dist/autocompletetextbox/autocompletetextbox.js",
   "files": [
     "dist/",
     "loader/"
@@ -21,7 +21,9 @@
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "devDependencies": {
-    "@stencil/core": "^1.0.7"
+    "@stencil/core": "^1.0.7",
+    "@types/jasmine": "^3.3.14",
+    "@types/node": "^12.6.8"
   },
   "license": "MIT"
 }
