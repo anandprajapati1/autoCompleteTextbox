@@ -36,7 +36,11 @@ export class AutoCompleteTextbox {
     this.isFocused = state;
   }
 
-  filterData(){
+  filterData(e:KeyboardEvent = null){
+    if(e && e.key === "Escape") {
+      this.textInput.value = "";
+    }
+
     if(this.textInput.value.trim()){
       this.data = this.initialDataSet.filter(x=>x.toLowerCase().indexOf(this.textInput.value.trim().toLowerCase()) >- 1);
     } else {
@@ -57,7 +61,7 @@ export class AutoCompleteTextbox {
           onKeyUp={this.filterData.bind(this)} onChange={this.filterData.bind(this)}/>
         <ul class={this.isFocused ? "suggestion active" : "suggestion"}>
           {this.data.map((x)=>
-            <li class="suggestion-item" onClick={this.optionClicked.bind(this)}>{x}</li>
+            <li class="suggestion-item" onClick={(e:Event)=>{if(e) this.optionClicked(e)}}>{x}</li>
           )}
         </ul>
       </div>
