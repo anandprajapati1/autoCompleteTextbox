@@ -15,7 +15,7 @@ export namespace Components {
     */
     'data': string[];
     /**
-    * Use this method to change/initialize autocomplete suggestions list.
+    * This method can be used to change/initialize autocomplete suggestions list. Note - This will not append but reinitialize the suggestion data, so previous suggestion data will be overwritten.
     */
     'initializeData': (d: string[]) => Promise<void>;
     /**
