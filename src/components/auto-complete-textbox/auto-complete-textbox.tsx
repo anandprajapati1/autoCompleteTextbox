@@ -14,7 +14,10 @@ export class AutoCompleteTextbox {
    */
   @Prop({attribute: 'disabled', reflect : true}) isDisabled:boolean = false;
 
-  @Prop({reflect: false}) data: string[];
+  /**
+   * The filterd data as per searched query
+   */
+  @Prop({reflect: false}) data: string[] = [];
 
   /**
    * Text box state as focused or not
@@ -23,6 +26,10 @@ export class AutoCompleteTextbox {
 
   textInput!: HTMLInputElement;
 
+  /**
+   * Use this method to change/initialize autocomplete suggestions list.
+   * @param d An array of string to initialize autocomplete suggestions dataset.
+   */
   @Method() async initializeData(d: string[]) {
     this.initialDataSet = d;
     this.data = d;
@@ -48,8 +55,8 @@ export class AutoCompleteTextbox {
     }
   }
 
-  optionClicked(e:Event){
-    this.textInput.value = (e.target as HTMLUListElement).innerText;
+  textChanged(_query:string){
+    this.textInput.value = _query;
     this.filterData();
     this.activate(false);
   }
@@ -61,7 +68,7 @@ export class AutoCompleteTextbox {
           onKeyUp={this.filterData.bind(this)} onChange={this.filterData.bind(this)}/>
         <ul class={this.isFocused ? "suggestion active" : "suggestion"}>
           {this.data.map((x)=>
-            <li class="suggestion-item" onClick={(e:Event)=>{if(e) this.optionClicked(e)}}>{x}</li>
+            <li class="suggestion-item" onClick={(e:MouseEvent) => {if(e) this.textChanged(x)}}>{x}</li>
           )}
         </ul>
       </div>

@@ -10,7 +10,13 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface AutoCompleteTextbox {
+    /**
+    * The filterd data as per searched query
+    */
     'data': string[];
+    /**
+    * Use this method to change/initialize autocomplete suggestions list.
+    */
     'initializeData': (d: string[]) => Promise<void>;
     /**
     * This property can be used by host element to make functionality disabled
@@ -34,6 +40,9 @@ declare global {
 
 declare namespace LocalJSX {
   interface AutoCompleteTextbox extends JSXBase.HTMLAttributes<HTMLAutoCompleteTextboxElement> {
+    /**
+    * The filterd data as per searched query
+    */
     'data'?: string[];
     /**
     * This property can be used by host element to make functionality disabled
