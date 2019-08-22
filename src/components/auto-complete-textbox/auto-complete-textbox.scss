@@ -1,0 +1,37 @@
+.auto-complete-box {
+  font-family: font-family('primary');
+  font-size: px('xs');
+  input {
+    padding: 8px 12px;
+    display: block;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .suggestion {
+    display: none;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+
+    &.active {
+      display: block;
+    }
+
+    &-item {
+      margin: 0;
+      padding: #{spacings('xxs')} #{spacings('xs')};
+      list-style-type: none;
+      &:hover {
+        background: lightgray;
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+

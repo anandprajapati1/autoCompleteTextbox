@@ -27,6 +27,16 @@ To use this component in your project, you have to simply follow these **steps**
 
 ## Methods
 
+### `addData(d: string[]) => Promise<void>`
+
+This method can be used to add new options to autocomplete suggestions list.
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
 ### `initializeData(d: string[]) => Promise<void>`
 
 This method can be used to change/initialize autocomplete suggestions list.

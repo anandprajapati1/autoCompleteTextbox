@@ -1,0 +1,59 @@
+@import 'mixin.scss';
+
+$common: () !default;
+
+$common : merge($common, (
+  colors: (
+    primary: (
+      darker: #1B8E25,
+      dark: #249C2E,
+      base: #3FAE48,
+      light: #97D700,
+      lighter: #C5E86C
+    ),
+    secondary: (
+      darker: #E47109,
+      dark: #F1811E,
+      base: #F68C2E,
+      light: #75787B,
+      lighter: #A7A8AA
+    )
+  ),
+  font-family: (
+    primary: (
+      name: unquote('Trebuchet MS, Arial,sans-serif'),
+      weight:700,
+      diff: (top: 0.11, bottom: 0.18)
+    ),
+    secondary: (
+      name: unquote('Trebuchet MS, Arial,sans-serif'),
+      weight:400,
+      diff: (top: 0.11, bottom: 0.18)
+    ),
+    body: (
+      name: unquote('Trebuchet MS, Arial,sans-serif'),
+      weight:300,
+      diff: (top: 0.11, bottom: 0.18)
+    )
+  ),
+  font-ratio: 1,
+  font-sizes: (
+    xxxs: 12px,
+    xxs: 14px,
+    xs: 16px,
+    s: 20px,
+    m: 26px,
+    l: 35px,
+    xl: 42px,
+    xxl: 60px
+  ),
+  spacings: (
+    xxs: 5px,
+    xs: 10px,
+    s: 15px,
+    m: 30px,
+    l: 40px,
+    xl: 50px,
+    xxl: 80px
+  )
+));

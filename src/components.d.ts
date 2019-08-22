@@ -11,6 +11,10 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
   interface AutoCompleteTextbox {
     /**
+    * This method can be used to add new options to autocomplete suggestions list.
+    */
+    'addData': (d: string[]) => Promise<void>;
+    /**
     * The filterd data as per searched query
     */
     'data': string[];

@@ -2,7 +2,7 @@ import { Component, Prop, h, State, Method } from '@stencil/core';
 
 @Component({
   tag: 'auto-complete-textbox',
-  styleUrl: 'auto-complete-textbox.css',
+  styleUrl: 'auto-complete-textbox.scss',
   shadow: true
 })
 
@@ -34,6 +34,15 @@ export class AutoCompleteTextbox {
   @Method() async initializeData(d: string[]) {
     this.initialDataSet = d;
     this.data = d;
+  }
+
+  /**
+   * This method can be used to add new options to autocomplete suggestions list.
+   * @param d An array of string to initialize autocomplete suggestions dataset.
+   */
+  @Method () async addData(d: string[]) {
+    this.initialDataSet = this.initialDataSet.concat(d);
+    this.data = this.data.concat(d);
   }
 
   componentWillLoad(){

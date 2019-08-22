@@ -17,13 +17,20 @@
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e",
+    "test": "stencil test --e2e",
+    "test.spec": "stencil test --spec",
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "devDependencies": {
     "@stencil/core": "^1.0.7",
-    "@types/jasmine": "^3.3.14",
-    "@types/node": "^12.6.8"
+    "@stencil/sass": "^1.0.1",
+    "@types/jest": "24.0.17",
+    "@types/node": "^12.6.8",
+    "@types/puppeteer": "1.12.4",
+    "jest": "24.8.0",
+    "jest-cli": "24.8.0",
+    "puppeteer": "1.17.0",
+    "rollup-plugin-node-polyfills": "^0.2.1"
   },
   "license": "MIT"
 }
